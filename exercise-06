@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+    cin >> n;
+    
+    map<string, int> a;
+    
+    while (n > 0) {
+        int x;
+        cin >> x;
+        
+        string s;
+        cin >> s;
+        
+        if (x == 1) {
+            int y;
+            cin >> y;
+            
+            a[s] += y;
+        } else if (x == 2) {
+            a[s] = 0;
+        } else {
+            cout << a[s] << "\n";
+        }
+        n--;
+    }
+    
+    return 0;
+}
