@@ -1,0 +1,36 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;  // doc so luong thao tac
+
+    set<int> a;  // tap hop de luu tru cac phan tu
+    while (n > 0) {
+        int c, t;
+        cin >> c >> t;  //doc thao tac va gia tri
+
+        switch (c) {
+            case 1:
+                a.insert(t);  // them phan tu vao tap hop
+                break;
+            case 2:
+                a.erase(t);  // xoa phan tu khoi tap hop
+                break;
+            case 3:
+                // kiem tra su ton tai cua phan tu trong tap hop
+                if (a.find(t) != a.end())
+                    cout << "Yes" << endl;
+                else
+                    cout << "No" << endl;
+                break;
+            default:
+                cout << "invalid switch value: " << c << endl;
+        }
+        n--;
+    }
+
+    return 0;
+}
